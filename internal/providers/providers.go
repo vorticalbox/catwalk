@@ -90,6 +90,7 @@ var providerRegistry = []ProviderFunc{
 	kimiCodingProvider,
 	ollamaCloudProvider,
 	syntheticProvider,
+	ollamaCloudProvider,
 }
 
 // GetAll returns all registered providers.
