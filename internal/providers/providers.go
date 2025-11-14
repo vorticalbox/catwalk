@@ -15,6 +15,9 @@ var openAIConfig []byte
 //go:embed configs/anthropic.json
 var anthropicConfig []byte
 
+//go:embed configs/synthetic.json
+var syntheticConfig []byte
+
 //go:embed configs/gemini.json
 var geminiConfig []byte
 
@@ -81,6 +84,7 @@ var providerRegistry = []ProviderFunc{
 	huggingFaceProvider,
 	aiHubMixProvider,
 	ollamaCloudProvider,
+	syntheticProvider,
 }
 
 // GetAll returns all registered providers.
@@ -103,6 +107,10 @@ func loadProviderFromConfig(configData []byte) catwalk.Provider {
 
 func openAIProvider() catwalk.Provider {
 	return loadProviderFromConfig(openAIConfig)
+}
+
+func syntheticProvider() catwalk.Provider {
+	return loadProviderFromConfig(syntheticConfig)
 }
 
 func anthropicProvider() catwalk.Provider {
