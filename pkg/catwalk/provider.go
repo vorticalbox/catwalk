@@ -13,6 +13,7 @@ const (
 	TypeAzure        Type = "azure"
 	TypeBedrock      Type = "bedrock"
 	TypeVertexAI     Type = "google-vertex"
+	TypeOllamaCloud  Type = "ollama-cloud"
 )
 
 // InferenceProvider represents the inference provider identifier.
@@ -36,6 +37,7 @@ const (
 	InferenceProviderChutes      InferenceProvider = "chutes"
 	InferenceProviderHuggingFace InferenceProvider = "huggingface"
 	InferenceAIHubMix            InferenceProvider = "aihubmix"
+	InferenceKimiCoding          InferenceProvider = "kimi-coding"
 	InferenceProviderOllamaCloud InferenceProvider = "ollamacloud"
 )
 
@@ -98,6 +100,7 @@ func KnownProviders() []InferenceProvider {
 		InferenceProviderChutes,
 		InferenceProviderHuggingFace,
 		InferenceAIHubMix,
+		InferenceKimiCoding,
 		InferenceProviderOllamaCloud,
 	}
 }
@@ -113,5 +116,6 @@ func KnownProviderTypes() []Type {
 		TypeAzure,
 		TypeBedrock,
 		TypeVertexAI,
+		TypeOllamaCloud,
 	}
 }

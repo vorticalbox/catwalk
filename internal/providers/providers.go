@@ -60,6 +60,9 @@ var huggingFaceConfig []byte
 //go:embed configs/aihubmix.json
 var aiHubMixConfig []byte
 
+//go:embed configs/kimi.json
+var kimiCodingConfig []byte
+
 //go:embed configs/ollamacloud.json
 var ollamaCloudConfig []byte
 
@@ -83,8 +86,9 @@ var providerRegistry = []ProviderFunc{
 	deepSeekProvider,
 	huggingFaceProvider,
 	aiHubMixProvider,
-	ollamaCloudProvider,
 	syntheticProvider,
+	kimiCodingProvider,
+	ollamaCloudProvider,
 }
 
 // GetAll returns all registered providers.
@@ -171,6 +175,10 @@ func huggingFaceProvider() catwalk.Provider {
 
 func aiHubMixProvider() catwalk.Provider {
 	return loadProviderFromConfig(aiHubMixConfig)
+}
+
+func kimiCodingProvider() catwalk.Provider {
+	return loadProviderFromConfig(kimiCodingConfig)
 }
 
 func ollamaCloudProvider() catwalk.Provider {
