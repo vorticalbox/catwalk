@@ -21,6 +21,7 @@ type InferenceProvider string
 // All the inference providers supported by the system.
 const (
 	InferenceProviderOpenAI      InferenceProvider = "openai"
+	InferenceProviderCodex       InferenceProvider = "codex"
 	InferenceProviderAnthropic   InferenceProvider = "anthropic"
 	InferenceProviderSynthetic   InferenceProvider = "synthetic"
 	InferenceProviderGemini      InferenceProvider = "gemini"
@@ -84,6 +85,7 @@ type Model struct {
 func KnownProviders() []InferenceProvider {
 	return []InferenceProvider{
 		InferenceProviderOpenAI,
+		InferenceProviderCodex,
 		InferenceProviderSynthetic,
 		InferenceProviderAnthropic,
 		InferenceProviderGemini,

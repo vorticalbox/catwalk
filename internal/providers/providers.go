@@ -12,6 +12,9 @@ import (
 //go:embed configs/openai.json
 var openAIConfig []byte
 
+//go:embed configs/codex.json
+var codexConfig []byte
+
 //go:embed configs/anthropic.json
 var anthropicConfig []byte
 
@@ -72,6 +75,7 @@ type ProviderFunc func() catwalk.Provider
 var providerRegistry = []ProviderFunc{
 	anthropicProvider,
 	openAIProvider,
+	codexProvider,
 	geminiProvider,
 	azureProvider,
 	bedrockProvider,
@@ -111,6 +115,10 @@ func loadProviderFromConfig(configData []byte) catwalk.Provider {
 
 func openAIProvider() catwalk.Provider {
 	return loadProviderFromConfig(openAIConfig)
+}
+
+func codexProvider() catwalk.Provider {
+	return loadProviderFromConfig(codexConfig)
 }
 
 func syntheticProvider() catwalk.Provider {
